@@ -1,0 +1,92 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 24px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px 0;
+    background: #FFFFFF;
+    box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
+}
+
+.header__left {
+    display: flex;
+    align-items: center;
+}
+
+.logo__img {
+    object-fit: cover;
+    width: 75px;
+    height: 75px;
+    margin-right: 10px;
+}
+
+.logo__text {}
+
+.logo__text-title {
+    margin: 0;
+    padding: 0;
+    font-size: 35px;
+    border-bottom: 3px solid #000;
+}
+
+.logo__text-subtitle {
+    font-size: 24px;
+}
+
+.header__nav {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    list-style: none;
+}
+
+.nav__item {
+    display: block;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    padding: 5px 20px;
+    font-size: 30px;
+}
+
+.nav__item::after {
+    display: block;
+    content: '';
+    border-bottom: solid 4px #000;
+    border-radius: 15px;
+    transform: scaleX(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+.nav__item:hover::after {
+    transform: scaleX(1);
+}
+
+.nav__link {}
+
+.header__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__right-element {
+    padding: 5px 14px;
+    font-size: 24px;
+    border: 3px solid rgba(0, 0, 0, 0);
+}
+
+.header__right-element:hover {
+    border: 3px solid #000;
+}
