@@ -3,64 +3,64 @@
 @section('title', 'Регистрация')
 
 @section('content')
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+    <div class="container">
+        <div class="block-title">
+            <h3 class="block-title__text">Регистрация</h3>
+        </div>
+        <form class="form" method="POST" action="{{ route('register') }}">
+            @csrf
 
-        <!-- Name -->
-        <div>
-            <label for="name" value="Name">
-
-                <input id="name" class="block mt-1 w-full" type="text" name="name" value="{{ old('name') ?? null }}"
+            <!-- Name -->
+            <div class="form__item">
+                <label class="form__item-label" for="name">Фамилия Имя Отчество</label>
+                <input id="name" class="form__item-input" type="text" name="name" value="{{ old('name') ?? null }}"
                     placeholder="Введите ФИО" required autofocus>
-        </div>
+            </div>
 
-        <!-- login -->
-        <div>
-            <label for="login" value="login">
-
-                <input id="login" class="block mt-1 w-full" type="text" name="login" value="{{ old('login') ?? null }}"
+            <!-- login -->
+            <div class="form__item">
+                <label class="form__item-label" for="login">Логин пользователя</label>
+                <input id="login" class="form__item-input" type="text" name="login" value="{{ old('login') ?? null }}"
                     placeholder="Введите логин" required>
-        </div>
+            </div>
 
-        <!-- phone -->
-        <div>
-            <label for="phone" value="phone">
-
-                <input id="phone" class="block mt-1 w-full" type="number" name="phone" value="{{ old('phone') ?? null }}"
+            <!-- phone -->
+            <div class="form__item">
+                <label class="form__item-label" for="phone">Номер телефона</label>
+                <input id="phone" class="form__item-input" type="number" name="phone" value="{{ old('phone') ?? null }}"
                     placeholder="Введите номер телефона" required>
-        </div>
+            </div>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <label for="email" value="Email">
-
-                <input id="email" class="block mt-1 w-full" type="email" name="email" value="{{ old('email') ?? null }}"
+            <!-- Email Address -->
+            <div class="form__item">
+                <label class="form__item-label" for="email">Адрес электронной почты</label>
+                <input id="email" class="form__item-input" type="email" name="email" value="{{ old('email') ?? null }}"
                     placeholder="Введите email" required>
-        </div>
+            </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <label for="password" value="Password">
-
-                <input id="password" class="block mt-1 w-full" type="password" name="password" required
+            <!-- Password -->
+            <div class="form__item">
+                <label class="form__item-label" for="password" value="Password">Пароль</label>
+                <input id="password" class="form__item-input" type="password" name="password" required
                     placeholder="Введите пароль" autocomplete="new-password">
-        </div>
+            </div>
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <label for="password_confirmation" value="Confirm Password">
-
-                <input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation"
+            <!-- Confirm Password -->
+            <div class="form__item">
+                <label class="form__item-label" for="password_confirmation" value="Confirm Password">Повтор пароля</label>
+                <input id="password_confirmation" class="form__item-input" type="password" name="password_confirmation"
                     placeholder="Повторите пароль" required>
-        </div>
+            </div>
 
-        <input name="personal_data" id="" type="checkbox" required>
-        <label for="personal_data">Согласие на обработку персональных данных</label>
+            <input name="personal_data" id="personal_data" type="checkbox" required>
+            <label for="personal_data">Согласие на обработку персональных данных</label>
 
-        <div class="flex items-center justify-end mt-4">
-            <button class="ml-4">Регистрация</button>
-            <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">Уже зарегистрированы?</a>
-            
-        </div>
-    </form>
+            <div class="form__item">
+                <button class="form__item-button">Регистрация</button>
+
+            </div>
+            <a class="form__item-a" href="{{ route('login') }}">Уже зарегистрированы?</a>
+
+        </form>
+    </div>
 @endsection

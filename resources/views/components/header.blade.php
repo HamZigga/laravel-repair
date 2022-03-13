@@ -16,12 +16,12 @@
             <a href="{{ route('statement.create') }}" class="nav__item-link">Создать заявку</a>
         </li>
         <li class="nav__item">
-            <a href="" class="nav__item-link">О нас</a>
+            <a href="#aboutus" class="nav__item-link">О нас</a>
         </li>
     </nav>
     <div class="header__right">
         @auth
-            <div class="header__right-element">{{ Auth::user()->name }}</div>
+            <div class="header__right-element"><a href="{{ route('personal.area') }}">{{ Auth::user()->name }}</a></div>
             <form class="header__right-element" method="POST" action="{{ route('logout') }}">
                 @csrf
                 <a href="route('logout')" onclick="event.preventDefault();

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StatementRequest;
 use App\Models\Category;
 use App\Models\Statement;
+use App\Services\ImageSaveService;
 use Illuminate\Support\Facades\Storage;
 
 class StatementController extends Controller
@@ -16,27 +17,27 @@ class StatementController extends Controller
     }
 
     public function store(StatementRequest $request)
-    {
+    {   
         Statement::create([
             'user_id' => auth()->user()->id,
             'category_id' => 1,
             'address' => $request->address,
             'description' => $request->description,
             'price' => $request->price,
-            'photo_place' => 'KARTINKA',
-            'photo_blueprint' => 'KARTINKA',
+            'photo_place' => (new ImageSaveService)->imageSave('place', $request->file('photo_place')),
+            'photo_blueprint' => (new ImageSaveService)->imageSave('blueprint', $request->file('photo_blueprint')),
         ]);
         return redirect()->route('main')->with('success', 'Заявка успешно отправлена');
     }
 
     public function edit(int $id)
     {
-        return view('statement-list');
+        return view('statement-edit', ['statement' => Statement::findOrFail($id), 'categories' => Category::all()]);
     }
 
-    public function update(StatementRequest $request)
+    public function update($id,StatementRequest $request)
     {
-        Statement::create([
+        Statement::findOrFail($id)->update([
             'user_id' => auth()->user()->id,
             'category_id' => '1',
             'address' => $request->address,
@@ -45,7 +46,7 @@ class StatementController extends Controller
             'photo_place' => 'KARTINKA',
             'photo_blueprint' => 'KARTINKA',
         ]);
-        return redirect()->route('main')->with('success', 'Заявка успешно отправлена');
+        return redirect()->route('main')->with('success', 'Заявка успешно Обновлена');
     }
 
     public function delete(int $id)
@@ -66,5 +67,13 @@ class StatementController extends Controller
         return response()->json([
             'statementCount' => Statement::count()
         ]);
+    }
+
+    public function destroy($id)
+    {
+        $statement = Statement::findOrFail($id);
+        $statement->delete();
+        return redirect()->route('statement')->with('success', 'Заявка успешно Обновлена');
+
     }
 }

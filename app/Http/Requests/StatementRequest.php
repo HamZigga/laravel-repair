@@ -34,10 +34,10 @@ class StatementRequest extends FormRequest
 
     public function messages(){
         return [
-            'address.required' => 'Поле исполнителя является обязательным',
+            'address.required' => 'Поле адреса является обязательным',
             'address.max' => 'Поле адреса более 255 символов',
             
-            'description.max' => 'Поле адреса более 1000ы символов',
+            'description.max' => 'Поле описания более 1000 символов',
 
             'price.required' => 'Поле максимальной цены является обязательным',
             'price.number' => 'Поле максимальной цены должно быть целым числом',

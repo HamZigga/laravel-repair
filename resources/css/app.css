@@ -1,6 +1,8 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Scada&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +16,8 @@ body {
 .header {
     display: flex;
     justify-content: space-around;
+    font-family: 'Scada', sans-serif;
+    height: 10vh;
     width: 100%;
     padding: 10px 0;
     background: #FFFFFF;
@@ -31,8 +35,6 @@ body {
     height: 75px;
     margin-right: 10px;
 }
-
-.logo__text {}
 
 .logo__text-title {
     margin: 0;
@@ -73,8 +75,6 @@ body {
     transform: scaleX(1);
 }
 
-.nav__link {}
-
 .header__right {
     display: flex;
     align-items: center;
@@ -89,4 +89,251 @@ body {
 
 .header__right-element:hover {
     border: 3px solid #000;
+    border-radius: 3px;
+}
+
+.fullscreen{
+    display: flex;
+    justify-content: space-around;
+    background: url("/storage/images/baseimg/bg.png") no-repeat center center fixed;
+    background-size: cover;
+    height: 90vh;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.fullscreen__item{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 96px;
+    color: #FFFFFF;
+}
+
+.fullscreen__item-right{
+    width: 200px;
+    word-wrap: normal;
+}
+.fullscreen__item:last-child{
+    flex-direction: column;
+    font-size: 50px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-bottom: 10vh;
+}
+.fullscreen__item-text{
+    width: 400px;
+    word-wrap: normal;
+}
+
+.fullscreen__item-counter{
+    font-size: 45px;
+    word-wrap: normal;
+}
+
+.fullscreen__item-button{
+    padding: 1px 20px;
+    background-color: #FFFFFF;
+    border: 5px solid #FFFFFF;
+    color: #000;
+    border-radius: 3px;
+    font-size: 50px;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.fullscreen__item-button:hover{
+    background-color: rgba(0, 0, 0, 0);
+    color: #FFFFFF;
+}
+
+.block-title {
+    display: flex;
+    justify-content: center;
+    font-size: 32px;
+    padding: 5px 10px;
+}
+
+.container {
+    width: 1000px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: 0 auto;
+    
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.features__item {
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
+    width: 450px;
+}
+
+.features__item-img {
+    height: 100px;
+    width: 100px;
+    margin-right: 20px;
+}
+
+.features__item-text {
+    font-size: 24px;
+}
+
+.aboutus {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    
+}
+
+.aboutus__main{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 50px 0;
+}
+.aboutus__main-img{
+    max-width: 50%;
+    margin-right: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.aboutus__main-text{
+    width: 550px;
+}
+
+.footer{
+    background-color: #FFFFFF;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.footer__upper{
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer__social{
+    display: flex;
+    justify-content: center;
+}
+
+.footer__social a{
+    padding: 5px;
+}
+
+.footer__lower{
+    display: flex;
+    justify-content: center;
+}
+
+.form{
+    width: 900px;
+}
+
+.form_item{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    cursor:pointer;
+}
+
+.form__item-input, .form__item-textarea, .form__item-select{
+    width: 800px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #000;
+    border-radius: 5px;
+    margin: 10px 0 25px 0;
+}
+
+.form__item-label{
+    font-size: 28px;
+}
+
+
+.form__item-button{
+    margin-top: 20px;
+    padding: 5px 15px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: 28px;
+    transition: 0.2s linear;
+}
+
+.form__item-button:hover{
+    background-color: #000;
+    color: #FFFFFF;
+}
+
+.form__item-a{
+    font-size: 28px;
+    padding: 20px 0;
+    text-decoration: underline;
+}
+
+.personal__label{
+    font-size: 24px;
+}
+
+.personal__text{
+    font-size: 28px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.personal__link{
+    margin-top: 20px;
+    border: 2px solid #000;
+    background-color: #FFFFFF;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: 0.2s ease-in-out;
+}
+
+.personal__link:hover{
+    background-color: #000;
+    color: #FFFFFF;
+}
+
+.container-pesonalarea{
+    margin-bottom: 150px;
+}
+
+
+.statement__item{
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 20px 40px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    word-wrap: break-word;
+}
+
+.statement__item-date{
+    font-size: 14px;
+}
+
+.statement__item-title{
+    font-size: 28px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    font-weight: bold;
+}
+.statement__item-text{
+    padding: 5px 0;
+}
+
+.statement__item-text span{
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.statement__item-image{
+    object-fit: cover;
+    max-width: 600px;
+    max-height: 400px;
 }
